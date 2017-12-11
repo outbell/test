@@ -16,18 +16,18 @@ YAPI.LogUnhandledPromiseRejections();
 //   });
 // }
 
-async function HttpCallbackHandler(request, response)
-{
-  // HTTP requests from the web browsers land here
-  response.writeHead(200, {'Content-Type': 'text/html'});
-  response.write('time;sensor;value<br>\n');
-  for(let i = 0; i < Data.length; i++) {
-    response.write(Data[i].time + ";" +
-      Data[i].name + ";" +
-      Data[i].value + "<br>\n");
-  }
-  response.end();
-}
+// async function HttpCallbackHandler(request, response)
+// {
+//   // HTTP requests from the web browsers land here
+//   response.writeHead(200, {'Content-Type': 'text/html'});
+//   response.write('time;sensor;value<br>\n');
+//   for(let i = 0; i < Data.length; i++) {
+//     response.write(Data[i].time + ";" +
+//       Data[i].name + ";" +
+//       Data[i].value + "<br>\n");
+//   }
+//   response.end();
+// }
 
 async function WebSocketCallbackHandler(ws)
 {
@@ -81,13 +81,13 @@ async function WebSocketCallbackHandler(ws)
 }
 
 // We create an HTTP server...
-let http = require('http');
-http.createServer(HttpCallbackHandler).listen(8080);
+// let http = require('http');
+// http.createServer(HttpCallbackHandler).listen(8080);
 
 // ... and we create a WebSocket server
 let WebSocketServer = require('ws').Server;
 let wss = new WebSocketServer({ port: 8044 });
 wss.on('connection', WebSocketCallbackHandler);
 
-console.log('Node.js Web HTTP server running on http://...:8080/');
+//console.log('Node.js Web HTTP server running on http://...:8080/');
 console.log('Node.js Websocket server running on http://...:8044/');
