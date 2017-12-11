@@ -90,4 +90,4 @@ let wss = new WebSocketServer({ port: port });
 wss.on('connection', WebSocketCallbackHandler);
 
 //console.log('Node.js Web HTTP server running on http://...:8080/');
-console.log('Node.js Websocket server running on http://...:8044/');
+console.log('Node.js Websocket server running on '+port);
