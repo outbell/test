@@ -1,0 +1,15 @@
+{
+  "name": "callback",
+  "version": "0.0.1",
+  "description": "callbacktest yoctopuce",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "arun",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^3.3.2",
+    "yoctolib-es2017": "^1.10.29281"
+  }
+}
