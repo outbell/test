@@ -83,10 +83,10 @@ async function WebSocketCallbackHandler(ws)
 // We create an HTTP server...
 // let http = require('http');
 // http.createServer(HttpCallbackHandler).listen(8080);
-
+var port =process.env.PORT || 1337;
 // ... and we create a WebSocket server
 let WebSocketServer = require('ws').Server;
-let wss = new WebSocketServer({ port: 8044 });
+let wss = new WebSocketServer({ port: port });
 wss.on('connection', WebSocketCallbackHandler);
 
 //console.log('Node.js Web HTTP server running on http://...:8080/');
